@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登陆风向标</title>
+
+<style type="text/css">
+*
+{
+	margin:0px;
+	padding:0px;
+}
+#top
+{
+	width:100%;
+	min-width:1300px;
+	height:80px;
+	border-bottom:2px dotted gray;	
+}
+#logo
+{
+	position:absolute;
+	top:5px;
+	left:100px;
+}
+#title_name
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:14px;
+	left:180px;
+	top:30px;
+}
+#title_name span
+{
+	font-size:16px;
+	color:#FF7939;
+}
+img
+{
+	position:absolute;
+	top:190px;
+}
+#logn
+{
+	position:absolute;
+	width:300px;
+	height:450px;
+	top:135px;
+	left:1000px;
+	background-color:#FFF;
+	box-shadow:0 0 8px gray;
+}
+
+#logn h1,#regest h1
+{
+	font-size:20px;
+	color:#F03;
+	margin-left:20px;
+	line-height:50px;
+}
+#logn h1 span,#regest h1 span
+{
+	font-size:12px;
+	color:gray;
+	line-height:50px;
+	float:right;
+}
+#logn h1 span a,#regest h1 span a
+{
+	color:#F03;
+	text-decoration:none;
+	margin-left:10px;
+}
+#logn_txt
+{
+	position:absolute;
+	top:120px;
+	left:20px;
+	width:250px;
+	height:30px;
+	font-size:18px;
+	line-height:30px;
+	padding-left:20px;
+}
+#logn_pos
+{
+	position:absolute;
+	top:170px;
+	left:20px;
+	width:250px;
+	height:30px;
+	font-size:18px;
+	line-height:30px;
+	padding-left:20px;
+}
+#logn_txt:hover,#logn_pos:hover
+{
+	box-shadow:0 0 5px #F03;
+}
+#zo_logn
+{
+	position:absolute;
+	top:230px;
+	left:20px;
+}
+#zo_logn_txt
+{
+	position:absolute;
+	top:230px;
+	left:40px;
+	font-size:14px;
+}
+#forgat_pos
+{
+	position:absolute;
+	top:230px;
+	left:230px;
+	color:#000;
+	text-decoration:none;
+	font-size:14px;
+}
+#forgat_pos:hover
+{
+	color:#F03;
+}
+#btn_logn
+{
+	position:absolute;
+	width:250px;
+	height:30px;
+	top:280px;
+	left:30px;
+	text-align:center;
+	line-height:30px;
+	font-family:黑体;
+	font-weight:700;
+	color:#FFF;
+	background-color:#F03;
+	cursor:pointer;
+}
+#btn_logn:hover
+{
+	box-shadow:0 0 8px #F03;
+}
+
+</style>
+</head>
+
+<body>
+<div id="top">
+<img src="../logo.png" id="logo" />
+<p id="title_name"><span>风向标</span>,放心去旅游</p>
+</div>
+<img src="logn_regest_img/img.jpg" width="100%" height="350px;" />
+<div id="logn">
+<h1><strong>登陆风向标</strong><span>还没有账号?<a href="regest.html">注册</a></span></h1>
+<input type="radio" checked="checked" style="margin-top:30px; margin-left:20px;" />普通登陆<input type="radio" style=" margin-left:20px; margin-top:30px;" />手机验证登陆
+<input type="text" placeholder="输入手机号/邮箱/用户名" id="logn_txt" />
+<input type="password" placeholder="输入密码" id="logn_pos" />
+<input type="checkbox" checked="checked" id="zo_logn" /><p id="zo_logn_txt">自动登陆</p>
+<a href="#" id="forgat_pos">忘记密码?</a>
+
+<div id="btn_logn">登陆</div>
+</div>
+
+
+
+</body>
+</html>

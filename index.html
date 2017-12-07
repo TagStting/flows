@@ -1,0 +1,2001 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>风向标官网-跟团游</title>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/hovertree.js"></script>
+<script src="js/keleyi.js"></script>
+
+
+<script type="text/javascript">
+function scroll(id)      //jq实现锚点链接滚动效果
+{  
+    $("#" + id).HoverTreeScroll(1000);
+} 
+
+var img_index = 4;              //全局变量，代表主页上图片切换中当前图片序号
+onload = function()
+{
+	show_selection1();
+	index_img_change();
+}
+function index_img_change()   //主页上图片的自动切换
+{
+	change_tips_titles();     //随机数更改tips_titles的颜色
+	change_advertise();       //同时切换广告图片
+	var o1=document.getElementById("index_img1");
+	var o2=document.getElementById("index_img2");
+	var o3=document.getElementById("index_img3");
+	var o4=document.getElementById("index_img4");
+	switch (img_index)
+	{
+		case 1:
+			o1.style.opacity="1";
+			o2.style.opacity="0";
+			o3.style.opacity="0";
+			o4.style.opacity="0";
+			break;
+		case 2:
+			o1.style.opacity="0";
+			o2.style.opacity="1";
+			o3.style.opacity="0";
+			o4.style.opacity="0";
+			break;
+		case 3:
+			o1.style.opacity="0";
+			o2.style.opacity="0";
+			o3.style.opacity="1";
+			o4.style.opacity="0";
+			break;
+		case 4:
+			o1.style.opacity="0";
+			o2.style.opacity="0";
+			o3.style.opacity="0";
+			o4.style.opacity="1";
+			break;
+	}
+	img_index++;
+	if(img_index>4)
+	{
+		img_index=1;
+	}
+	var t=setTimeout('index_img_change()',2500);
+}
+function change_advertise()              //切换广告图片
+{
+	if(img_index == 1)
+	{
+	    $("#advertise li:nth-child(1)").css("opacity","1");
+		$("#advertise li:nth-child(2)").css("opacity","0");
+		$("#advertise li:nth-child(3)").css("opacity","0");
+		$("#advertise li:nth-child(4)").css("opacity","0");
+	}
+	if(img_index == 2)
+	{
+	    $("#advertise li:nth-child(1)").css("opacity","0");
+		$("#advertise li:nth-child(2)").css("opacity","1");
+		$("#advertise li:nth-child(3)").css("opacity","0");
+		$("#advertise li:nth-child(4)").css("opacity","0");
+	}
+	if(img_index == 3)
+	{
+	    $("#advertise li:nth-child(1)").css("opacity","0");
+		$("#advertise li:nth-child(2)").css("opacity","0");
+		$("#advertise li:nth-child(3)").css("opacity","1");
+		$("#advertise li:nth-child(4)").css("opacity","0");
+	}
+	if(img_index == 4)
+	{
+	    $("#advertise li:nth-child(1)").css("opacity","0");
+		$("#advertise li:nth-child(2)").css("opacity","0");
+		$("#advertise li:nth-child(3)").css("opacity","0");
+		$("#advertise li:nth-child(4)").css("opacity","1");
+	}
+}
+function change_tips_titles()        //随机数更改tips_titles的颜色
+{
+	var o=document.getElementById("tips_titles");
+	var arr=["#C9C","B0D686","red","blue","gray","yellow","purple","brown","pink"];
+	var index=Math.floor((Math.random()*arr.length));
+	o.style.color=arr[index];
+}
+function show_selection()            //置空选项
+{
+	$("#main > ul:nth-child(1) > li").css("background-color","#4A4A4A");
+	$("#main > ul:nth-child(1) > li").css("color","#FFF");
+}
+function show_selection1()           //显示选项1
+{
+	show_selection()
+	$("#main > ul:nth-child(1) > li:nth-child(1)").css("background-color","#FFF");
+	$("#main > ul:nth-child(1) > li:nth-child(1)").css("color","#33C170");
+	$("#selection2").css("display","none");
+	$("#selection4").css("display","none");
+	$("#selection5").css("display","none");
+	$("#selection").css("display","block");
+}
+function show_selection2()           //显示选项2
+{
+	show_selection()
+	$("#main > ul:nth-child(1) > li:nth-child(2)").css("background-color","#FFF");
+	$("#main > ul:nth-child(1) > li:nth-child(2)").css("color","#33C170");
+	$("#selection").css("display","none");
+	$("#selection4").css("display","none");
+	$("#selection5").css("display","none");
+	$("#selection2").css("display","block");
+}
+function show_selection3()           //显示选项3
+{
+	show_selection()
+	$("#main > ul:nth-child(1) > li:nth-child(3)").css("background-color","#FFF");
+	$("#main > ul:nth-child(1) > li:nth-child(3)").css("color","#33C170");
+	$("#selection2").css("display","none");
+	$("#selection4").css("display","none");
+	$("#selection").css("display","none");
+	$("#selection5").css("display","block");
+}
+function show_selection4()           //显示选项4
+{
+	show_selection()
+	$("#main > ul:nth-child(1) > li:nth-child(4)").css("background-color","#FFF");
+	$("#main > ul:nth-child(1) > li:nth-child(4)").css("color","#33C170");
+	$("#selection").css("display","none");
+	$("#selection2").css("display","none");
+	$("#selection5").css("display","none");
+	$("#selection4").css("display","block");
+}
+function show_selection5()           //显示选项5
+{
+	show_selection()
+	$("#main > ul:nth-child(1) > li:nth-child(5)").css("background-color","#FFF");
+	$("#main > ul:nth-child(1) > li:nth-child(5)").css("color","#33C170");
+	$("#selection2").css("display","none");
+	$("#selection4").css("display","none");
+	$("#selection").css("display","none");
+	$("#selection5").css("display","block");
+}
+function closed()                    //选项关闭
+{
+	show_selection1();
+}
+function show(o)
+{
+	o.nextSibling.style.display="block";
+}
+function hide(o)
+{
+	o.nextSibling.style.display="none";
+}
+function shows(o)
+{
+	o.style.display="block";
+	o.style.backgroundColor="#FF661C";
+	o.style.color="#FFF";
+}
+function hides(o)
+{
+	o.style.backgroundColor="transparent";
+	o.style.color="#FF661C";
+}
+</script>
+
+<style type="text/css">
+*
+{
+	padding:0;
+	margin:0;
+}
+.index_imgs
+{
+	z-index:-2;
+	position:absolute;
+	left:0;
+	top:0;
+	transition:all 0.5s;
+}
+#top
+{
+	width:100%;
+	height:70px;
+	min-width:1300px;
+	box-shadow:1px 2px 2px #D1D1D1;
+}
+#logo
+{
+	position:absolute;
+	top:5px;
+	left:100px;
+}
+#title_name
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:14px;
+	left:180px;
+	top:30px;
+}
+#title_name span
+{
+	font-size:16px;
+	color:#FF7939;
+}
+#top ul
+{
+	margin-left:353px;
+}
+#top ul li
+{
+	display:block;
+	width:70px;
+	height:70px;
+	float:left;
+}
+#top ul a:first-child li
+{
+	background: linear-gradient(#208FFF, #008FD5,#008BCE,#208FFF);
+	color:#FFF;
+}
+#top ul a
+{
+	text-decoration:none;
+	color:#000;
+	font-family:黑体;
+	font-weight:500;
+	text-align:center;
+	line-height:70px;
+}
+#top ul a:hover li
+{
+	color:#09c;
+	border-bottom:3px solid #09c;
+}
+#top ul a:first-child:hover li
+{
+	color:#FFF;
+	border:none;
+}
+#top_right
+{
+	position:absolute;
+	width:200px;
+	height:70px;
+	left:1000px;
+}
+#top_right a
+{
+	color:#09c;
+	text-decoration:none;
+	font-family:黑体;
+	font-weight:500;
+	text-align:right;
+	line-height:70px;
+}
+#main
+{
+	position:absolute;
+	width:100%;
+	height:400px;
+	min-width:1300px;
+	top:70px;
+}
+#main #search
+{
+	position:absolute;
+	width:595px;
+	height:110px;
+	top:240px;
+	left:370px;
+	background-color:#000;
+	background:rgba(0,0,0,0.6);
+	border-radius:3px;
+}
+#search ul
+{
+	margin-left:20px;
+	margin-top:20px;
+}
+#search ul li
+{
+	display:block;
+	width:80px;
+	height:30px;
+	font-family:黑体;
+	font-size:22px;
+	line-height:30px;
+	font-weight:700;
+	text-align:right;
+	color:#FFF;
+	cursor:pointer;
+	float:left;
+	transition:color 0.3s;
+	margin-right:50px;
+}
+
+#search ul li:hover
+{
+	color:#33C170;
+}
+#search input
+{
+	position:absolute;
+	display:block;
+	width:500px;
+	height:35px;
+	font-size:18px;
+	line-height:30px;
+	top:60px;
+	left:10px;
+	opacity:1;
+	text-indent:15px;
+	border:2px solid #33C170;
+	border-radius:3px;
+}
+#search #search_button
+{
+	position:absolute;
+	display:block;
+	width:70px;
+	height:35px;
+	top:60px;
+	left:510px;
+	color:#FFF;
+	background-color:#33C170;
+	font-family:黑体;
+	font-size:20px;
+	font-weight:700;
+	text-align:center;
+	line-height:35px;
+	border:2px solid #33C170;
+	cursor:pointer;
+	border-radius:3px;
+}
+
+#main > ul:first-child
+{
+	position:absolute;
+	left:90px;
+	top:25px;
+}
+#main > ul:first-child li
+{
+	display:block;
+	width:90px;
+	height:70px;
+	background-color:#4A4A4A;
+	color:#FFF;
+	font-family:黑体;
+	font-size:18px;
+	font-weight:500;
+	text-align:center;
+	line-height:70px;
+	cursor:pointer;
+	border-bottom:1px dotted #202020;
+}
+#main > ul:first-child li:hover
+{
+	background-color:#FFF;
+	color:#33C170;
+}
+
+#main > ul:nth-child(2)
+{
+	position:absolute;
+	top:25px;
+	left:180px;
+	display:none;
+}
+#main > ul:nth-child(2) li
+{
+	display:block;
+	width:160px;
+	height:50.5px;
+	background-color:#FFF;
+	padding-left:10px;
+	font-family:黑体;
+	font-size:15px;
+	font-weight:700;
+	cursor:default;
+}
+#main > ul:nth-child(2) li span
+{
+	font-size:14px;
+	color:#999;
+	font-weight:200;
+	cursor:pointer;
+}
+#main > ul:nth-child(2) li span:hover
+{
+	color:#33C170;
+}
+
+#main_right
+{
+	position:absolute;
+	width:260px;
+	height:355px;
+	left:995px;
+	top:25px;
+	background-color:#FFF;
+}
+#main_right marquee
+{
+	font-family:黑体;
+	font-size:13px;
+	font-weight:300;
+}
+#main_right marquee span
+{
+	font-family:黑体;
+	font-size:11px;
+	font-weight:300;
+	color:#686868;
+}
+#main_right div:first-child
+{
+	width:100%;
+	height:90px;
+}
+#main_right #percent
+{
+	position:absolute;
+	top:10px;
+	left:20px;
+	width:70px;
+	height:70px;
+	border-radius:45px;
+	border:5px solid #0084C4;
+	font-size:14px;
+	text-align:center;
+	line-height:30px;
+	font-weight:700;
+	color:#00608E;
+}
+#main_right p:nth-child(3)
+{
+	position:absolute;
+	top:30px;
+	left:110px;
+	font-size:14px;
+	color:#686868;
+}
+#main_right p:nth-child(5)
+{
+	position:absolute;
+	top:55px;
+	left:110px;
+	font-size:14px;
+	color:#686868;
+}
+#main_right #empty
+{
+	position:absolute;
+	width:20px;
+	height:25px;
+	top:10px;
+	left:20px;
+	background-color:#FFF;
+	z-index:1;
+}
+#main_right_service
+{
+	position:absolute;
+	width:100%;
+	height:13px;
+	top:170px;
+	background-color:#999;
+	font-family:黑体;
+	font-size:14px;
+	font-weight:300;
+	text-align:center;
+	line-height:13px;
+}
+#main ul:last-child
+{
+	position:absolute;
+	top:185px;
+}
+#main ul:last-child a
+{
+	display:block;
+	width:49%;
+	height:55px;
+	text-decoration:none;
+	color:#000;
+	font-size:15px;
+	text-align:center;
+	line-height:55px;
+	float:left;
+	transition:color 0.2s;
+}
+#main ul:last-child a li
+{
+	text-align:center;
+}
+#main ul:last-child a:hover
+{
+	color:#FF8E1E;
+}
+.service_img
+{
+	float:left;
+	margin-top:14px;
+	margin-left:15px;
+}
+#introduction
+{
+	position:absolute;
+	width:875px;
+	height:200px;
+	top:480px;
+	left:90px;
+}
+#introduction > ul:first-child li
+{
+	display:block;
+	width:100px;
+	height:50px;
+	text-align:center;
+	font-family:黑体;
+	font-size:18px;
+	font-weight:4;
+	float:left;
+	margin-right:10px;
+	line-height:50px;
+	cursor:pointer;
+	transition:all 0.2s;
+}
+#introduction > ul:first-child li:hover,#introduction > ul:first-child li:first-child
+{
+	font-size:19px;
+	color:#33C170;
+	font-weight:700;
+}
+.h_line
+{
+	position:absolute;
+	width:100%;
+	height:45px;
+	border-bottom:3px solid #B0B0B0;
+	z-index:-1;
+}
+#introduction_img
+{
+	position:absolute;
+	top:70px;
+	cursor:pointer;
+}
+#introduction_img li
+{
+	float:left;
+	margin-left:20px;
+}
+#introduction_img li img
+{
+	transition:all 0.5s;
+}
+#introduction_img li:hover img
+{
+	transform:scale(1.08);
+}
+#introduction_img li:first-child
+{
+	margin-left:16px;
+}
+#introduction_img .containner
+{
+	width:197px;
+	height:120px;
+	overflow:hidden;
+}
+#introduction_img .containner .intros
+{
+	position:absolute;
+	z-index:100;
+	width:197px;
+	height:50px;
+	top:70px;
+	padding-top:10px;
+	font-family:黑体;
+	font-size:14px;
+	background-color:#FFF;
+	opacity:0.6;
+}
+#introduction_img .containner .intros p
+{
+	font-size:18px;
+	font-weight:700;
+	color:#F03;
+}
+#news
+{
+	position:absolute;
+	width:250px;
+	height:200px;
+	top:480px;
+	left:1000px;
+}
+#news p:first-child
+{
+	position:absolute;
+	line-height:50px;
+}
+#news span
+{
+	font-size:12px;
+	color:#9C9C9C;
+	line-height:50px;
+	cursor:pointer;
+	float:right;
+}
+#news ul
+{
+	position:absolute;
+	top:60px;
+}
+#news ul a
+{
+	display:block;
+	width:100%;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:12px;
+	text-decoration:none;
+	color:#000;
+}
+#news ul a:hover
+{
+	color:#FF9122;
+}
+#news ul li
+{
+	float:left;
+}
+#room
+{
+	position:absolute;
+	width:875px;
+	height:280px;
+	top:700px;
+	left:90px;
+}
+#room #title
+{
+	display:inline;
+	position:absolute;
+	font-family:黑体;
+	font-size:18px;
+	font-weight:600;
+	line-height:50px;
+	margin-left:16px;
+}
+#room ul:nth-child(2)
+{
+	margin-left:215px;
+}
+#room ul:nth-child(2) li
+{
+	display:block;
+	width:50px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	font-family:黑体;
+	font-size:16px;
+	font-weight:400;
+	float:left;
+	cursor:pointer;
+	margin-left:10px;
+	transition:all 0.5s;
+}
+#room ul:nth-child(2) li:hover
+{
+	color:#37BEFF;
+	font-weight:700;
+}
+#room span
+{
+	font-size:12px;
+	color:#9C9C9C;
+	line-height:50px;
+	cursor:pointer;
+	float:right;
+}
+#room_left
+{
+	position:absolute;
+	width:200px;
+	height:250px;
+	top:50px;
+	left:16px;
+}
+#room_left img
+{
+	position:absolute;
+	z-index:-1;
+}
+
+#room_left ul
+{
+	float:right;
+	margin-top:25px;
+}
+#room_left ul li
+{
+	display:inline;
+	font-size:14px;
+	color:black;
+	margin-top:15px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color:#BBB;
+	font-family:黑体;
+	font-size:16px;
+	font-weight:400;
+	text-align:center;
+	float:right;
+	cursor:default;
+}
+#room_left ul li:hover
+{
+	background-color:#8D8D8D;
+}
+#room_right
+{
+	position:absolute;
+	width:640px;
+	height:230px;
+	top:50px;
+	left:235px;
+}
+#room_right ul
+{
+	position:absolute;
+}
+#room_right ul li
+{
+	float:left;
+	margin-left:20px;
+}
+#room_right ul li:hover
+{
+	box-shadow:1px 2px 5px #787878;	
+	
+}
+#room_right ul li > div
+{
+	width:200px;
+	height:220px;
+}
+#room_right ul li:first-child
+{
+	margin-left:0px;
+}
+.room_command
+{
+	width:200px;
+	height:180px;
+	overflow:hidden;
+}
+.room_command_price
+{
+	width:200px;
+	height:50px;
+	background-color:#FFF;
+	opacity:0.8;
+	transition:all 0.5s;
+	margin-top:-25px;
+}
+.room_command_price p
+{
+	margin-left:20px;
+	line-height:25px;
+}
+.room_command_price p:last-child
+{
+	font-weight:700;
+	color:red;
+}
+#room_right ul li:hover .room_command_price
+{
+	margin-top:-50px;
+}
+
+
+
+.price
+{
+	display:inline;
+	color:#F03;
+	font-size:18px;
+	line-height:50px;
+	margin-left:10px;
+}
+.command
+{
+	font-size:12px;
+	color:#8B8B8B;
+	float:right;
+	margin-right:10px;
+	line-height:50px;
+}
+#strategy
+{
+	position:absolute;
+	width:875px;
+	height:550px;
+	top:1010px;
+	left:90px;
+}
+#strategy p
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:22px;
+	font-weight:500;
+	line-height:50px;
+	margin-left:16px;
+}
+#strategy p:nth-child(1) span
+{
+	font-size:15px;
+	color:#757575;
+	margin-left:30px;
+}
+#strategy  p:nth-child(2) a
+{
+	text-decoration:none;
+	color:#000;
+	font-size:17px;
+}
+#title_right
+{
+	float:right;
+}
+#title_right li
+{
+	display:block;
+	width:70px;
+	height:50px;
+	line-height:50px;
+	font-size:17px;
+	font-family:黑体;
+	float:left;
+	margin-left:15px;
+	cursor:pointer;
+}
+#strategy_selection
+{
+	position:absolute;
+	top:60px;
+	left:16px;
+}
+#strategy_selection li
+{
+	display:block;
+	width:100px;
+	height:30px;
+	border-radius:10px;
+	font-size:14px;
+	text-align:center;
+	line-height:30px;
+	float:left;
+	margin-left:15px;
+	cursor:default;
+}
+#strategy_selection li:hover,#strategy_selection li:first-child
+{
+	color:#FFF;
+	background-color:#1AB5FF;
+}
+#strategy_selection li:first-child
+{
+	margin-left:0;
+}
+#strategy_img
+{
+	position:absolute;
+	top:85px;
+	left:16px;
+}
+#strategy_img li
+{
+	float:left;
+	margin-left:15px;
+	margin-top:15px;
+}
+#strategy_img li:first-child
+{
+	margin-left:0;
+}
+#strategy_bottom1
+{
+	position:absolute;
+	width:400px;
+	height:120px;
+	top:400px;
+	left:16px;
+	border-left:4px solid #8D8D8D;
+}
+#strategy_bottom2
+{
+	position:absolute;
+	width:415px;
+	height:120px;
+	top:400px;
+	left:430px;
+	border-left:4px solid #8D8D8D;
+}
+#strategy_bottom1 p:first-child,#strategy_bottom2 p:first-child
+{
+	margin-left:-4px;
+	display:block;
+	font-family:黑体;
+	font-size:18px;
+	padding-left:10px;
+	border-left:4px solid #1AB5FF;
+}
+#strategy_bottom1 ul,#strategy_bottom2 ul
+{
+	position:absolute;
+	top:50px;
+	left:10px;
+}
+#strategy_bottom1 ul li,#strategy_bottom2 ul li
+{
+	font-size:13px;
+	float:left;
+	margin-top:20px;
+	cursor:pointer;
+}
+#strategy_bottom1 ul li:hover,#strategy_bottom2 ul li:hover
+{
+	color:#1AB5FF;
+}
+#strategy_bottom1 ul li span,#strategy_bottom2 ul li span
+{
+	color:#1AB5FF;
+}
+#strategy_img li img
+{
+	transition:all 0.5s;
+}
+#strategy_img li:hover img
+{
+	filter:brightness(50%);
+}
+
+#strategy_img li:first-child div:first-child
+{
+	width:400px;
+	height:280px;
+}
+#strategy_img li div:first-child
+{
+	width:200px;
+	height:131px;
+}
+.go
+{
+	position:relative;
+	width:100px;
+	height:30px;
+	font-family:黑体;
+	font-size:18px;
+	text-align:center;
+	line-height:30px;
+	color:#FF661C;
+	border:2px solid #FF661C;
+	cursor:pointer;
+	margin:0 auto;
+	margin-top:-100px;
+	transition:all 0.5s;
+	display:none;
+}
+
+
+
+
+#ticket
+{
+	position:absolute;
+	width:875px;
+	height:330px;
+	top:1570px;
+	left:90px;
+}
+#ticket p:first-child
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:18px;
+	font-weight:700;
+	line-height:50px;
+	left:16px;
+}
+#ticket ul:nth-child(3)
+{
+	position:absolute;
+	left:220px;
+}
+#ticket ul:nth-child(3) li
+{
+	display:block;
+	float:left;
+	margin-left:30px;
+	line-height:50px;
+	font-family:黑体;
+	cursor:pointer;
+}
+#ticket ul:nth-child(3) li:hover
+{
+	color:#FF9122;
+}
+#ticket_left
+{
+	position:absolute;
+	width:210px;
+	height:250px;
+	top:70px;
+	left:16px;
+}
+#ticket_left ul
+{
+	position:absolute;
+}
+#ticket_left ul li
+{
+	display:block;
+	width:100px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	text-align:left;
+	float:left;
+	cursor:pointer;
+}
+#ticket_left ul li:hover
+{
+	color:#FF9122;
+}
+#ticket_left img
+{
+	position:absolute;
+	top:80px;
+}
+#ticket_right
+{
+	position:absolute;
+	width:621px;
+	height:230px;
+	top:70px;
+	left:240px;
+}
+#ticket_right ul li
+{
+	float:left;
+	margin-left:15px;
+}
+#ticket_right ul li:first-child
+{
+	margin-left:0;
+}
+#ticket_right ul li div
+{
+	width:195px;
+	height:210px;
+}
+#ticket_right ul li:hover div
+{
+	box-shadow:1px 2px 8px #7F7F7F;
+}
+#advertise
+{
+	position:absolute;
+	top:1900px;
+	left:105px;
+}
+#advertise li
+{
+	position:absolute;
+	z-index:-1;
+	transition:all 0.5s;
+}
+#weather
+{
+	position:absolute;
+	width:870px;
+	height:400px;
+	top:2180px;
+	left:90px;
+}
+#weather p:first-child
+{
+	position:absolute;
+	left:16px;
+	font-family:黑体;
+	font-size:20px;
+	font-weight:700;
+	line-height:50px;
+}
+#weather p:nth-child(2)
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:14px;
+	font-weight:400;
+	color:#6B6B6B;
+	line-height:50px;
+	left:150px;
+}
+#weather p:nth-child(2) a
+{
+	margin-left:20px;
+}
+#tem
+{
+	position:absolute;
+	width:200px;
+	height:80px;
+	top:60px;
+	left:335px;
+}
+#tem_left
+{
+	width:100px;
+	height:80px;
+	font-family:黑体;
+	font-size:50px;
+	text-align:center;
+	line-height:80px;
+	float:left;
+	border-right:2px solid gray;
+}
+#tem_right
+{
+	float:left;
+	line-height:25px;
+	margin-left:10px;
+}
+#predict_today
+{
+	position:absolute;
+	top:150px;
+	left:60px;
+	width:750px;
+	height:230px;
+	border-bottom:1px dotted black;
+}
+#predict_today p
+{
+	display:block;
+	width:100%;
+	font-family:黑体;
+	font-weight:700;
+	margin-left:-16px;
+	border-bottom:1px solid black;
+}
+#predict_today p span
+{
+	float:right;
+}
+#predict_today ul
+{
+	position:absolute;
+	top:80px;
+	left:30px;
+}
+#predict_today ul li
+{
+	float:left;
+	margin-left:30px;
+}
+#predict_today ul li:first-child
+{
+	margin-left:0;
+}
+#predict_today ul li div
+{
+	width:40px;
+	height:120px;
+}
+#predict_today ul li div span
+{
+	text-align:center;
+	line-height:40px;
+}
+#footer
+{
+	position:absolute;
+	width:100%;
+	min-width:1300px;
+	height:350px;
+	top:2600px;
+	background-color:#5D5D5D;
+}
+#footer_top
+{
+	position:absolute;
+	width:1020px;
+	height:210px;
+	top:50px;
+	left:150px;
+	border-bottom:1px dotted #FFF;
+}
+#footer_top ul:nth-child(1)
+{
+	position:absolute;
+}
+#footer_top ul:nth-child(2)
+{
+	position:absolute;
+	top:100px;
+}
+#footer_top ul li
+{
+	display:block;
+	width:100px;
+	font-family:黑体;
+	font-size:13px;
+	font-weight:400;
+	text-align:center;
+	margin-top:10px;
+	color:#818181;
+	float:left;
+	cursor:pointer;
+	transition:all 0.3s;
+	border-right:1px solid #818181;
+}
+#footer_top ul li:hover
+{
+	color:#FF671E;
+}
+#footer_top ul li:first-child
+{
+	color:#000;
+	border-right:1px solid #5D5D5D;
+}
+#footer_top ul li:last-child
+{
+	border-right:1px solid #5D5D5D;
+}
+#footer_bottom
+{
+	position:absolute;
+	width:1020px;
+	height:70px;
+	top:270px;
+	left:150px;
+}
+#footer_bottom ul li
+{
+	float:left;
+	margin-left:30px;
+	margin-top:15px;
+}
+#footer_bottom ul li a
+{
+	display:block;
+	width:110px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	font-family:黑体;
+	font-size:18px;
+	color:#FFF;
+	text-decoration:none;
+}
+#footer_bottom ul li a:hover
+{
+	border-bottom:3px solid #FFF;
+}
+#selection2
+{
+	position:absolute;
+	top:25px;
+	left:180px;
+	width:450px;
+	height:355px;
+	z-index:100;
+	background-color:#FFF;
+	display:none;
+}
+#selection2 input:nth-child(1),#selection2 input:nth-child(3)
+{
+	margin-left:20px;
+	margin-top:30px;
+}
+#address
+{
+	margin-left:20px;
+	margin-top:30px;
+	width:150px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	padding-left:20px;
+	border:2px solid #FF8448;
+}
+#hotel_name
+{
+	margin-left:20px;
+	width:200px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	padding-left:20px;
+	border:2px solid #FF8448;
+}
+#in_date
+{
+	margin-top:30px;
+	margin-left:20px;
+	width:200px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	padding-left:20px;
+	border:2px solid #FF8448;
+}
+#out_date
+{
+	margin-left:20px;
+	width:150px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	padding-left:20px;
+	border:2px solid #FF8448;
+}
+#selection2 p
+{
+	font-family:黑体;
+	font-size:14px;
+	margin-top:30px;
+	margin-left:20px;
+}
+#button_search
+{
+	position:absolute;
+	width:120px;
+	height:35px;
+	top:250px;
+	left:270px;
+	font-family:黑体;
+	font-family:18px;
+	text-align:center;
+	line-height:35px;
+	color:#FFF;
+	background-color:#FF8448;
+	box-shadow:0 0 5px gray;
+	cursor:pointer;
+}
+#selection4
+{
+	position:absolute;
+	top:25px;
+	left:180px;
+	width:450px;
+	height:355px;
+	z-index:100;
+	background-color:#FFF;
+	display:none;
+}
+#selection4 p
+{
+	font-family:黑体;
+	font-weight:600;
+	margin-top:30px;
+	margin-left:20px;
+	float:left;
+}
+#tickets
+{
+    margin-left:-100px;
+	margin-top:80px;
+	width:350px;
+	height:30px;
+	font-family:黑体;
+	line-height:30px;
+	padding-left:20px;
+	border:2px solid #FF8448;
+}
+#selection4_button_search
+{
+	position:absolute;
+	width:120px;
+	height:35px;
+	top:160px;
+	left:275px;
+	font-family:黑体;
+	font-family:18px;
+	text-align:center;
+	line-height:35px;
+	color:#FFF;
+	background-color:#FF8448;
+	box-shadow:0 0 5px gray;
+	cursor:pointer;
+}
+#hot_city
+{
+	position:absolute;
+	margin-top:110px;
+	left:20px;
+	list-style-type:none;
+}
+#hot_city li
+{
+	font-family:黑体;
+	font-size:12px;
+	float:left;
+	margin-left:10px;
+	cursor:pointer;
+}
+#hot_city li:hover
+{
+	color:#FF8448;
+}
+#hot_city li:first-child
+{
+	font-size:14px;
+	font-weight:700;
+}
+#selection5
+{
+	position:absolute;
+	top:25px;
+	left:180px;
+	width:450px;
+	height:355px;
+	font-family:黑体;
+	font-size:35px;
+	text-align:center;
+	line-height:355px;
+	z-index:100;
+	background-color:#FFF;
+	display:none;
+}
+.close
+{
+	position:absolute;
+	color:red;
+	font-size:14px;
+	top:30px;
+	left:400px;
+	cursor:pointer;
+}
+#selection5 .close
+{
+	position:absolute;
+	color:red;
+	font-size:14px;
+	font-weight:400;
+	font-family:宋体;
+	top:-130px;
+	left:400px;
+	cursor:pointer;
+}
+#nav_right
+{
+	position:fixed;
+	width:50px;
+	height:100%;
+	background-color:#282828;
+    background:rgba(0,0,0,0.5);
+	top:0px;
+	left:1310px;
+}
+#go_top
+{
+	position:absolute;
+	top:600px;
+	left:8px;
+}
+#nav_right ul
+{
+
+	list-style-type:none;
+	margin-top:250px;
+}
+#nav_right ul a
+{
+	display:block;
+	margin-top:20px;
+	padding-left:8px;
+	background-color:#FFF;
+}
+#right_img
+{
+	position:absolute;
+	width:250px;
+	height:500px;
+	top:750px;
+	left:1000px;
+}
+#right_img ul
+{
+	list-style-type:none;
+}
+#right_img ul li
+{
+	margin-top:0px;
+	cursor:pointer;
+}
+#right_img ul li:hover img
+{
+	filter:brightness(90%);
+}
+#tips
+{
+	position:absolute;
+	width:250px;
+	height:310px;
+	top:1300px;
+	left:1000px;
+	border-radius:5px;
+	box-shadow:0 0 3px gray;
+}
+#tips_titles
+{
+	position:absolute;
+	left:20px;
+	font-weight:700;
+	line-height:50px;
+	transition:all 0.5s;
+}
+#tips ul
+{
+	margin-top:60px;
+	margin-left:20px;
+}
+#tips ul li
+{
+	font-family:黑体;
+	font-size:13px;
+	line-height:30px;
+	cursor:pointer;
+}
+#tips ul li:hover
+{
+	color:#FF9122;
+}
+</style>
+</head>
+
+<body>
+<div id="top">
+<img src="logo.png" id="logo" />
+<p id="title_name"><span>风向标</span>,放心去旅游</p>
+<ul style="list-style-type:none;">
+  <a id="index" href="#"><li>首页</li></a>
+  <a href="javascript:scroll('room')"><li>酒店</li></a>
+  <a href="javascript:scroll('strategy')"><li>攻略</li></a>
+  <a href="javascript:scroll('ticket')"><li>门票</li></a>
+  <a href="javascript:scroll('weather')"><li>天气</li></a>
+  <a href="javascript:scroll('introduction')"><li>景点</li></a>
+  <a href="#"><li>出境签证</li></a>
+</ul>
+
+
+<div id="top_right">
+<a href="logn_regest/logn_regest.html">登陆</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="logn_regest/regest.html">注册</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="onlie_connect/connect.html">联系客服</a>
+</div>
+
+</div>
+
+<div id="main">
+
+<ul style="list-style-type:none;">
+  <li onmouseover="show_selection1()">度假</li>
+  <li onmouseover="show_selection2()">酒店</li>
+  <li onmouseover="show_selection3()">自由行</li>
+  <li onmouseover="show_selection4()">门票</li>
+  <li onmouseover="show_selection5()">机票</li>
+</ul>
+
+<ul style="list-style-type:none;" id="selection">
+  <li>周边游<br /><span>洪崖洞</span> <span>天坑</span></li>
+  <li>国内旅游<br /><span>三亚</span> <span>云南</span> <span>东北</span></li>
+  <li>马尔代夫<br /><span>阿雅达岛</span> <span>康迪玛岛</span></li>
+  <li>欧洲 美洲<br /><span>瑞士</span> <span>法国</span> <span>美国</span> <span>加拿大</span></li>
+  <li>东南亚 南亚 泰国<br /><span>曼谷</span> <span>巴厘岛</span> <span>普吉岛</span></li>
+  <li>澳洲 中东非洲<br /><span>新西兰</span> <span>斐济</span> <span>迪拜</span> <span>埃及</span></li>
+  <li>香港 澳门 台湾<br /><span>香港迪士尼乐园</span> <span>台北</span></li>
+</ul>
+
+<div id="selection2">
+<input type="radio" checked="checked" /><span>国内酒店</span><input type="radio" /><span>国际酒店</span><br />
+<input type="text" placeholder="目的地" id="address" />
+<input type="text" placeholder="酒店名" id="hotel_name" />
+<input type="date" placeholder="入住日期" id="in_date" />
+<input type="date" placeholder="离开日期" id="out_date" />
+<p>实时搜索 382 个网站，71360 个城市，730000 家酒店报价信息</p>
+<div id="button_search">立即搜索</div>
+<span class="close" onmousedown="closed()">关闭</span>
+</div>
+
+<div id="selection4">
+<p>门票</p><p>一日游</p>
+<input type="text" placeholder="请输入景点，主题，城市" id="tickets" />
+<div id="selection4_button_search">立即搜索</div>
+<ul id="hot_city">
+  <li>热门城市</li>
+  <li>北京</li>
+  <li>上海</li>
+  <li>成都</li>
+  <li>三亚</li>
+  <li>广州</li>
+  <li>重庆</li>
+  <li>深圳</li>
+  <li>西安</li>
+  <li>厦门</li>
+  <li>杭州</li>
+  <li>武汉</li>
+  <li>大连</li>
+</ul>
+<span class="close" onmouseup="closed()">关闭</span>
+</div>
+
+<div id="selection5">
+努力开发中...
+<span class="close" onmouseup="closed()">关闭</span>
+</div>
+
+
+
+
+<a href="#"><img src="index_img/index1.jpg" height="100%" width="100%" id="index_img1" class="index_imgs" /></a>
+<a href="#"><img src="index_img/index2.jpg" height="100%" width="100%" id="index_img2" class="index_imgs" /></a>
+<a href="#"><img src="index_img/index3.jpg" height="100%" width="100%" id="index_img3" class="index_imgs" /></a>
+<a href="#"><img src="index_img/index4.jpg" height="100%" width="100%" id="index_img4" class="index_imgs" /></a>
+
+<div id="search">
+ <ul style="list-style-type:none;">
+   <li>地点</li>
+   <li>酒店</li>
+   <li>机票</li>
+   <li>天气</li>
+ </ul>
+ <input type="text" placeholder="青岛" />
+ <div id="search_button">搜索</div>
+</div>
+
+<div id="main_right">
+
+<div>
+
+<div id="empty"></div>
+
+<div id="percent">
+93%<br />
+满意度
+</div>
+<p>出游人数：74000000+</p><br />
+<p>评价人数：6500000+</p><br />
+</div>
+
+<marquee direction="up" scrollamount="2" height="50px;" style=" margin:10px;">
+<云南 昆明 西双版纳五日游>纯玩无购物，夏有乔木，雅望天堂...<br />
+<span>用户 192***38998 &nbsp;&nbsp;&nbsp; 3分钟前</span><br /><br />
+
+<云南 昆明 西双版纳五日游>纯玩无购物，夏有乔木，雅望天堂...<br />
+<span>用户 192***38998 &nbsp;&nbsp;&nbsp; 3分钟前</span><br /><br />
+
+<云南 昆明 西双版纳五日游>纯玩无购物，夏有乔木，雅望天堂...<br />
+<span>用户 192***38998 &nbsp;&nbsp;&nbsp; 3分钟前</span><br /><br />
+
+<云南 昆明 西双版纳五日游>纯玩无购物，夏有乔木，雅望天堂...<br />
+<span>用户 192***38998 &nbsp;&nbsp;&nbsp; 3分钟前</span><br /><br />
+</marquee>
+
+
+<div id="main_right_service">出游服务</div>
+
+
+<ul style="list-style-type:none;">
+  <a href="#"><li><img src="main_right_service_icon/img1.png" width="25px" height="25px" class="service_img" />签证</li></a>
+  <a href="#"><li><img src="main_right_service_icon/img2.png" width="25px" height="25px" class="service_img" />当地玩乐</li></a>
+  <a href="#"><li><img src="main_right_service_icon/img3.png" width="25px" height="25px" class="service_img" />租车用车</li></a>
+  <a href="#"><li><img src="main_right_service_icon/img4.png" width="25px" height="25px" class="service_img" />全球购</li></a>
+  <a href="#"><li><img src="main_right_service_icon/img5.png" width="25px" height="25px" class="service_img" />婚纱旅拍</li></a>
+  <a href="#"><li><img src="main_right_service_icon/img6.png" width="25px" height="25px" class="service_img" />全球WIFI</li></a>
+</ul>
+
+
+</div>
+
+</div>
+
+
+<div id="introduction">
+<ul style=" list-style-type:none;">
+  <li>超值特卖</li>
+  <li>旅游分期</li>
+  <li>特价机票</li>
+  <li>特价酒店</li>
+  <li>特价签证</li>
+  <li>旅游分期</li>
+  <li>超级自由行</li>
+</ul>
+<div class="h_line"></div>
+
+<ul style="list-style-type:none;" id="introduction_img">
+  <li><div class="containner"><img src="introduction_img/img1.jpg" width="199px" height="120px" />
+    <div class="intros">香港维港璀璨夜时光4日夜景游<p>￥2337起</p></div>
+  </div></li>
+  <li><div class="containner"><img src="introduction_img/img2.jpg" width="199px" height="120px" />
+    <div class="intros">丽江束河艳遇之都4日文艺游<p>￥725起</p></div>
+  </div></li>
+  <li><div class="containner"><img src="introduction_img/img3.jpg" width="199px" height="120px" />
+    <div class="intros">厦门柔情入眠4日游<p>￥1228起</p></div>
+  </div></li>
+  <li><div class="containner"><img src="introduction_img/img4.jpg" width="199px" height="120px" />
+    <div class="intros">三亚天涯海角海岛时光5日游<p>￥1354起</p></div>
+  </div></li>
+</ul>
+
+</div>
+
+
+<div id="news">
+<p>热门头条</p><span>更多 ></span>
+<div class="h_line"></div>
+<ul style="list-style-type:none;">
+  <a href="#"><li>【促销】邮轮预售满5000赠200元.</li></a>
+  <a href="#"><li>【活动】喜迎元旦，下单立减50！抽红包.</li></a>
+  <a href="#"><li>【公告】风向标诚聘英才，快来了解我们  >></li></a>
+  <a href="#"><li>【慈善】风向标成立线下慈善基金会，更多 >></li></a>
+</ul>
+</div>
+
+
+<div id="room">
+<p id="title">酒店精选</p>
+<ul style="list-style-type:none;">
+  <li>成都</li>
+  <li>重庆</li>
+  <li>三亚</li>
+  <li>西安</li>
+  <li>北京</li>
+  <li>上海</li>
+  <li>港澳</li>
+</ul>
+<span>更多产品 ></span>
+
+<div class="h_line"></div>
+
+<div id="room_left">
+<ul style="list-style-type:none;">
+  <li>精品酒店</li>
+  <li>五星级酒店</li>
+  <li>万达楼（含双餐）酒店</li>
+  <li>亚龙湾酒店</li>
+</ul>
+<img src="room_img/index.jpg" width="210px" height="230px" />
+</div>
+
+<div id="room_right">
+<ul style="list-style-type:none;">
+  <li><div>
+  <div class="room_command"><img src="room_img/room1.jpg" width="200px" height="180px" />
+  <div class="room_command_price"><P>成都精品酒店</P><p>8折</p></div>
+  </div><p class="price">￥256起</p><p class="command">4.5分/豪华型</p>
+  </div></li>
+  
+  <li><div>
+  <div class="room_command"><img src="room_img/room2.jpg" width="200px" height="180px" />
+  <div class="room_command_price"><P>锦江之星豪华酒店</P><p>6折</p></div>
+  </div><p class="price">￥172起</p><p class="command">4.4分/经济型</p>
+  </div></li>
+  
+  <li><div>
+  <div class="room_command"><img src="room_img/room3.jpg" width="200px" height="180px" />
+  <div class="room_command_price"><P>HouseBack</P><p>7折</p></div>
+  </div><p class="price">￥372起</p><p class="command">4.6分/舒适型</p>
+  </div></li>
+</ul>
+</div>
+
+</div>
+
+
+<div id="strategy">
+<p>旅行攻略<span>你的旅行指南针</span></p>
+<ul style="list-style-type:none;" id="title_right">
+  <li>创建行程</li>
+  <li>发表游记</li>
+</ul>
+<div class="h_line"></div>
+
+<ul style="list-style-type:none;" id="strategy_selection">
+  <li>最新精华游记</li>
+  <li>冰雪奇缘</li>
+  <li>出游计划</li>
+  <li>来场免签之旅！</li>
+</ul>
+
+<ul style="list-style-type:none;" id="strategy_img">
+  <li><div><img src="strategy_img/img1.jpg" width="400px" height="280px" onmouseover="show(this)" onmouseout="hide(this)" /><div class="go" onmouseover="shows(this)" onmouseout="hides(this)">去逛逛</div></div></li>
+  <li><div><img src="strategy_img/img2.jpg" width="200px" height="131px" onmouseover="show(this)" onmouseout="hide(this)" /><div class="go" onmouseover="shows(this)" onmouseout="hides(this)">去逛逛</div></div></li>
+  <li><div><img src="strategy_img/img3.jpg" width="200px" height="131px" onmouseover="show(this)" onmouseout="hide(this)" /><div class="go" onmouseover="shows(this)" onmouseout="hides(this)">去逛逛</div></div></li>
+  <li><div><img src="strategy_img/img4.jpg" width="200px" height="131px" onmouseover="show(this)" onmouseout="hide(this)" /><div class="go" onmouseover="shows(this)" onmouseout="hides(this)">去逛逛</div></div></li>
+  <li><div><img src="strategy_img/img5.jpg" width="200px" height="131px" onmouseover="show(this)" onmouseout="hide(this)" /><div class="go" onmouseover="shows(this)" onmouseout="hides(this)">去逛逛</div></div></li>
+</ul>
+
+
+<div id="strategy_bottom1">
+<p>国内热门目的地</p>
+<ul style="list-style-type:none;">
+  <li><span>杭州</span>：西湖桥，雷峰塔，忆江南</li>
+  <li  style="margin-left:20px;"><span>洛阳</span>：千年帝都，不朽青史</li>
+  <li><span>迎客松</span>：亭亭山上松，瑟瑟古中风</li>
+  <li style="margin-left:20px;"><span>妙峰山</span>：灌木丛生，夜色千绝</li>
+</ul>
+</div>
+
+<div id="strategy_bottom2">
+<p>海外热门目的地</p>
+<ul style="list-style-type:none;">
+  <li><span>东京</span>：东京铁塔下的爱情故事</li>
+  <li  style="margin-left:20px;"><span>加德满都</span>：红墙庙宇，寻古迹斑驳</li>
+  <li><span>曼谷</span>：美食，购物</li>
+  <li style="margin-left:60px;"><span>马约尔广场</span>：热闹集市，欢畅戏剧</li>
+</ul>
+</div>
+
+</div>
+
+
+
+<div id="ticket">
+<p>门票精选</p>
+<div class="h_line"></div>
+
+<ul style="list-style-type:none;">
+  <li>精选</li>
+  <li>亲子</li>
+  <li>度假胜地</li>
+</ul>
+<div id="ticket_left">
+<ul style="list-style-type:none;">
+  <li>北京</li>
+  <li>上海</li>
+  <li>南京</li>
+  <li>广州</li>
+</ul>
+
+<img src="ticket_img/img1.png.gif" width="210px" height="150px" />
+</div>
+
+<div id="ticket_right">
+<ul style="list-style-type:none;">
+  <li><div><img src="ticket_img/ticket1.jpg" width="195px" height="160px" /><p class="price">￥8起</p><p class="command">满意度97%</p></div></li>
+  <li><div><img src="ticket_img/ticket2.jpg" width="195px" height="160px" /><p class="price">￥10起</p><p class="command">满意度99%</p></div></li>
+  <li><div><img src="ticket_img/ticket3.jpg" width="195px" height="160px" /><p class="price">￥59起</p><p class="command">满意度94%</p></div></li>
+</ul>
+</div>
+
+</div>
+
+<ul id="advertise" style="list-style-type:none;">
+  <li><img src="advertise/img1.jpg" width="850px" height="230px"px /></li>
+  <li><img src="advertise/img2.jpg" width="850px" height="230px"px /></li>
+  <li><img src="advertise/img3.jpg" width="850px" height="230px"px /></li>
+  <li><img src="advertise/img4.jpg" width="850px" height="230px"px /></li>
+</ul>
+
+
+<div id="weather">
+<p>天气预报</p><p>当前位置：巴南区<a href="#">自动定位</a></p>
+<div class="h_line"></div>
+
+
+<div id="tem">
+<div id="tem_left">10℃</div>
+<div id="tem_right">
+<img src="tem_img/weather.png" width="30px" height="30px" /><br />
+<p>多云</p>
+<p>9℃~11℃</p>
+</div>
+</div>
+
+
+<div id="predict_today">
+<p>预报<span>今日 ></span></p>
+
+<ul style="list-style-type:none;">
+  <li><div><span>23:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>01:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>10℃</span></div></li>
+  <li><div><span>02:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>03:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>04:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>11℃</span></div></li>
+  <li><div><span>05:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>06:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>10℃</span></div></li>
+  <li><div><span>07:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>08:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+  <li><div><span>09:00</span><img src="tem_img/weather.png" width="30px" height="30px" /><span>9℃</span></div></li>
+</ul>
+
+</div>
+
+</div>
+
+
+<div id="footer">
+<div id="footer_top">
+  <ul style="list-style-type:none;">
+    <li>度假</li>
+    <li>三亚旅游</li><li>张家界旅游</li><li>北京旅游</li><li>台湾旅游</li><li>云南旅游</li><li>厦门旅游</li><li>苏州旅游</li>
+    <li>上海旅游</li><li>天津旅游</li><li>韩国旅游</li><li>乌镇旅游</li><li>西塘旅游</li><li>千岛湖旅游</li><li>南京旅游</li>
+    <li>婺源旅游</li><li>普吉岛旅游</li><li>鼓浪屿旅游</li><li>成都旅游</li><li>西安旅游</li><li>九寨沟旅游</li><li>青岛旅游</li>
+    <li>武汉旅游</li><li>巴厘岛旅游</li><li>西藏旅游</li><li>香港旅游</li><li>杭州旅游</li>
+  </ul>
+  
+    <ul style="list-style-type:none;">
+    <li>攻略</li>
+    <li>三亚旅游攻略</li><li>张家界旅游攻略</li><li>北京旅游攻略</li><li>台湾旅游攻略</li><li>云南旅游攻略</li><li>厦门旅游攻略</li><li>苏州旅游攻略</li>
+    <li>上海旅游攻略</li><li>天津旅游攻略</li><li>韩国旅游攻略</li><li>乌镇旅游攻略</li><li>西塘旅游攻略</li><li>千岛湖旅游攻略</li><li>南京旅游攻略</li>
+    <li>婺源旅游攻略</li><li>普吉岛旅游攻略</li><li>鼓浪屿旅游攻略</li><li>成都旅游攻略</li><li>西安旅游攻略</li><li>九寨沟旅游攻略</li><li>青岛旅游攻略</li>
+    <li>武汉旅游攻略</li><li>巴厘岛旅游攻略</li><li>西藏旅游攻略</li><li>香港旅游攻略</li><li>杭州旅游攻略</li>
+  </ul>
+</div>
+
+<div id="footer_bottom">
+<ul style="list-style-type:none;">
+  <li><a href="#">关于风向标</a></li>
+  <li><a href="#">商务合作</a></li>
+  <li><a href="#">商家入驻</a></li>
+  <li><a href="#">获取最新</a></li>
+  <li><a href="#">品牌合作专区</a></li>
+  <li><a href="#">网站联盟</a></li>
+  <li><a href="#">媒体报道</a></li>
+</ul>
+</div>
+
+</div>
+
+
+<div id="nav_right">
+<ul>
+  <a href="logn_regest/logn_regest.html"><li><img src="nav_right_img/icon_profile.png" /></li></a>
+  <a href="#"><li><img src="nav_right_img/icon_cart.png" /></li></a>
+  <a href="#"><li><img src="nav_right_img/animal-footprint.png" /></li></a>
+  <a href="onlie_connect/connect.html"><li><img src="nav_right_img/online_support.png" /></li></a>
+</ul>
+<a href="javascript:scroll('top')"><img id="go_top" src="nav_right_img/top.png" /></a>
+</div>
+
+<div id="right_img">
+  <ul>
+    <li><img src="right_imgs/img1.jpg" width="250px" height="100px" /></li>
+    <li><img src="right_imgs/img2.jpg" width="250px" height="100px" /></li>
+    <li><img src="right_imgs/img3.jpg" width="250px" height="100px" /></li>
+    <li><img src="right_imgs/img4.jpg" width="250px" height="100px" /></li>
+    <li><img src="right_imgs/img5.jpg" width="250px" height="100px" /></li>
+  </ul>
+</div>
+
+<div id="tips">
+<p id="tips_titles">小贴士</p>
+<div class="h_line"></div>
+<ul>
+  <li>哪里值得玩，看过来</li>
+  <li>春节钜惠，这些旅游地点...</li>
+  <li>圣诞节去哪里好呢？</li>
+  <li>你应该知道的12个旅游知识</li>
+  <li>冬季来临，去这里保暖</li>
+  <li>重庆完成新布局！扬帆，启航</li>
+  <li>这才是旅游的正确姿势</li>
+  <li>这里教你如何在旅途中省钱</li>
+</ul>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎注册风向标</title>
+
+<style type="text/css">
+*
+{
+	padding:0px;
+	margin:0px;
+}
+#top
+{
+	width:100%;
+	min-width:1300px;
+	height:80px;
+	background-color:#FFF;
+	box-shadow:3px 3px 5px gray;
+}
+#logo
+{
+	position:absolute;
+	top:10px;
+	left:100px;
+}
+#title_name
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:14px;
+	left:180px;
+	top:30px;
+}
+#title_name span
+{
+	font-size:16px;
+	color:#FF7939;
+}
+body
+{
+	background:url(logn_regest_img/regests.gif);
+}
+#regest_main
+{
+	position:relative;
+	width:1000px;
+	height:620px;
+	margin:0 auto;
+	top:100px;
+	background-color:#FFF;
+}
+#title
+{
+	width:1000px;
+	height:70px;
+	font-family:黑体;
+	font-size:25px;
+	font-weight:700;
+	text-align:center;
+	line-height:70px;
+	color:#FFF;
+	background-color:#008600;
+}
+#regest_main ul
+{
+	position:absolute;
+	top:120px;
+	left:300px;
+	list-style-type:none;
+}
+#regest_main ul li
+{
+	color:#008600;
+	float:left;
+	font-size:20px;
+	margin-left:50px;
+	cursor:pointer;
+}
+#regest_main ul li:first-child
+{
+	color:red;
+}
+#phone_number
+{
+	position:absolute;
+	width:400px;
+	height:30px;
+	top:200px;
+	left:350px;
+}
+#phone_number p,#txt_crc p,#pos p,#re_pos p
+{
+	line-height:30px;
+	float:left;
+}
+#phone_number input,#txt_crc input,#pos input,#re_pos input
+{
+	width:280px;
+	height:30px;
+	font-family:黑体;
+	font-size:17px;
+	line-height:30px;
+	margin-left:20px;
+}
+#txt_crc
+{
+	position:absolute;
+	width:480px;
+	height:30px;
+	top:280px;
+	left:350px;
+}
+#txt_crc input
+{
+	position:absolute;
+	margin-left:80px;
+}
+#pos
+{
+	position:absolute;
+	width:480px;
+	height:30px;
+	top:360px;
+	left:350px;
+}
+#re_pos
+{
+	position:absolute;
+	width:480px;
+	height:30px;
+	top:430px;
+	left:350px;
+}
+#agree
+{
+	margin-top:430px;
+	margin-left:350px;
+}
+#btn_regest
+{
+	position:absolute;
+	width:200px;
+	height:35px;
+	top:550px;
+	left:400px;
+	font-family:黑体;
+	font-size:19px;
+	text-align:center;
+	line-height:35px;
+	color:#FFF;
+	border-radius:5px;
+	cursor:pointer;
+	background-color:#008600;
+}
+#logn
+{
+	position:absolute;
+	font-family:黑体;
+	font-size:14px;
+	top:125px;
+	left:800px;
+}
+#logn a
+{
+	font-weight:700;
+	color:red;
+	text-decoration:none;
+}
+</style>
+
+
+</head>
+
+<body>
+<div id="top">
+<img src="../logo.png" id="logo" />
+<p id="title_name"><span>风向标</span>,放心去旅游</p>
+
+<div id="regest_main">
+<div id="title">手机注册</div>
+<ul>
+  <li>设置登陆名</li>
+  <li>设置密码</li>
+  <li>注册成功</li>
+</ul>
+
+<div id="phone_number"><p>手机号码:</p><input type="text" placeholder="请输入手机号码" /></div>
+<div id="txt_crc"><p>验证码:</p><input type="text" placeholder="不区分大小写" /><img src="logn_regest_img/crc_img.png" /></div>
+<div id="pos"><p>密码:</p><input type="text" placeholder="请输入密码" /></div>
+<div id="re_pos"><p>确认密码:</p><input type="text" placeholder="确认密码" /></div>
+<input type="checkbox" id="agree" /> 同意《风向标管理办法》
+
+<div id="btn_regest">立即注册</div>
+
+<p id="logn">已有风向标帐号，返回<a href="logn_regest.html">登陆</a></p>
+
+</div>
+</div>
+</body>
+</html>
